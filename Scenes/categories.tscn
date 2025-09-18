@@ -248,6 +248,6 @@ text = "MENU"
 [connection signal="pressed" from="GridContainer/Series" to="." method="_on_series_pressed"]
 [connection signal="pressed" from="GridContainer/Frutas" to="." method="_on_frutas_pressed"]
 [connection signal="pressed" from="GridContainer/Todos" to="." method="_on_todos_pressed"]
-[connection signal="pressed" from="GridContainer/Pais" to="." method="_on_frutas_pressed"]
+[connection signal="pressed" from="GridContainer/Pais" to="." method="_on_pais_pressed"]
 [connection signal="pressed" from="GridContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

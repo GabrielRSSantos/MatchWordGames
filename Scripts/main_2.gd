@@ -138,12 +138,14 @@ func translate_to_category(category) -> String:
 			"Frutas": return "Fruits"
 			"Herois": return "Heroes"
 			"Series": return "Series"
+			"Pais": return "Contries"
 			_ : return category
 	if Autoload.game_language == Autoload.languages.PORTUGUES:
 		match category:
 			"Frutas": return "Frutas"
 			"Herois": return "Herois"
 			"Series": return "Series"
+			"Pais": return "Paises"
 			_ : return category
 	return category
 

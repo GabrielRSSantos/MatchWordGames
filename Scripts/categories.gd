@@ -52,6 +52,8 @@ func _on_series_pressed() -> void:
 	default_pressed_button("Series")
 func _on_frutas_pressed() -> void:
 	default_pressed_button("Frutas")
+func _on_pais_pressed() -> void:
+	default_pressed_button("Pais")
 func _on_todos_pressed() -> void:
 	default_pressed_button("All")
 func _on_reset_pressed() -> void:
