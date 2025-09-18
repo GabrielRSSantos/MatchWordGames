@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhu22dxucltsn"]
+
+[ext_resource type="Script" uid="uid://bmvwpocibygw7" path="res://Scripts/control.gd" id="1_6sl1r"]
+[ext_resource type="Script" uid="uid://wwtj17cefq0g" path="res://Scripts/main_2.gd" id="1_vijbk"]
+[ext_resource type="PackedScene" uid="uid://dxg6yr0j4jnnj" path="res://Scenes/categories.tscn" id="2_ay0lb"]
+[ext_resource type="Theme" uid="uid://bp2756durdtp" path="res://Themes/item.tres" id="3_5lrfp"]
+[ext_resource type="Theme" uid="uid://b6sn34dbeyrt3" path="res://Themes/buttons.tres" id="3_ya2e4"]
+[ext_resource type="AudioStream" uid="uid://ctstrji71qehq" path="res://Sounds/Drop.wav" id="5_5lrfp"]
+[ext_resource type="Texture2D" uid="uid://cfnkq44g4fdck" path="res://Sprites/Option3.png" id="5_djkp1"]
+[ext_resource type="AudioStream" uid="uid://eld8y4i5pwem" path="res://Sounds/win.wav" id="7_ay0lb"]
+
+[node name="Main2" type="Node2D"]
+script = ExtResource("1_vijbk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ya2e4")
+script = ExtResource("1_6sl1r")
+
+[node name="MainContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.475
+anchor_top = 0.189
+anchor_right = 0.525
+anchor_bottom = 0.811
+offset_top = -0.0400009
+offset_right = -3.05176e-05
+offset_bottom = 0.039978
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Tips" type="VBoxContainer" parent="CanvasLayer/Control/MainContainer"]
+layout_mode = 2
+theme = ExtResource("3_5lrfp")
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Slots" type="HBoxContainer" parent="CanvasLayer/Control/MainContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Letters" type="GridContainer" parent="CanvasLayer/Control/MainContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 6
+columns = 9
+
+[node name="Reroll" type="Button" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(99.32, 30)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.845
+anchor_right = 1.0
+anchor_bottom = 0.083
+offset_left = -0.120056
+offset_bottom = 0.119999
+grow_horizontal = 0
+theme = ExtResource("3_ya2e4")
+text = "Reroll"
+icon_alignment = 1
+
+[node name="Reveal" type="Button" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(90, 20)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+text = "Reveal"
+
+[node name="Menu" type="Button" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(90, 20)
+layout_mode = 1
+offset_right = 90.0
+offset_bottom = 20.0
+text = "Menu"
+
+[node name="Option" type="Button" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.934
+anchor_top = 0.911
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.76001
+offset_top = 0.039978
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("5_djkp1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Drop" type="AudioStreamPlayer2D" parent="CanvasLayer/Control"]
+stream = ExtResource("5_5lrfp")
+
+[node name="Categories" parent="CanvasLayer" instance=ExtResource("2_ay0lb")]
+z_index = 1
+
+[node name="Win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ay0lb")
+
+[connection signal="check_fields" from="CanvasLayer/Control" to="." method="_on_control_check_fields"]
+[connection signal="pressed" from="CanvasLayer/Control/Reroll" to="." method="_on_reroll_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Reveal" to="." method="_on_reveal_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Option" to="." method="_on_option_pressed"]

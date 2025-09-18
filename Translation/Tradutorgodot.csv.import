@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bl5bgh0u185r1"
+
+[deps]
+
+files=["res://Translation/Tradutorgodot.EN.translation", "res://Translation/Tradutorgodot.PT.translation"]
+
+source_file="res://Translation/Tradutorgodot.csv"
+dest_files=["res://Translation/Tradutorgodot.EN.translation", "res://Translation/Tradutorgodot.PT.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,253 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxg6yr0j4jnnj"]
+
+[ext_resource type="Theme" uid="uid://b6sn34dbeyrt3" path="res://Themes/buttons.tres" id="1_a63yd"]
+[ext_resource type="Script" uid="uid://dcoe6bgsdvfbd" path="res://Scripts/categories.gd" id="1_kb3l7"]
+
+[sub_resource type="Gradient" id="Gradient_wd4b4"]
+offsets = PackedFloat32Array(0.588235, 1)
+colors = PackedColorArray(0, 0.431373, 0.866667, 1, 0.447814, 0.683738, 0.999995, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kb3l7"]
+gradient = SubResource("Gradient_wd4b4")
+width = 124
+height = 124
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Categories" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kb3l7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_kb3l7")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.113889
+anchor_right = 0.5
+anchor_bottom = 0.880556
+offset_left = -155.0
+offset_right = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a63yd")
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Heroes" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Heroes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -19.0
+offset_right = 41.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GridContainer/Heroes/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "HEROES"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer/Heroes/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "0 / 12"
+horizontal_alignment = 1
+
+[node name="Series" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Series"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -19.0
+offset_right = 41.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GridContainer/Series/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "SERIES"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer/Series/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "0 / 12"
+horizontal_alignment = 1
+
+[node name="Frutas" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Frutas"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -19.0
+offset_right = 41.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GridContainer/Frutas/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "FRUITS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer/Frutas/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "0 / 12"
+horizontal_alignment = 1
+
+[node name="Todos" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Todos"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -19.0
+offset_right = 41.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GridContainer/Todos/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "ALL"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer/Todos/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "0 / 12"
+horizontal_alignment = 1
+
+[node name="Pais" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/Pais"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -19.0
+offset_right = 41.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GridContainer/Pais/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
+text = "CONTRIES"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer/Pais/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "0 / 12"
+horizontal_alignment = 1
+
+[node name="Reset" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+
+[node name="VBoxContainer" type="CenterContainer" parent="GridContainer/Reset"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.289
+anchor_right = 0.91
+anchor_bottom = 0.711
+offset_top = -0.0100002
+offset_bottom = 0.00999832
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GridContainer/Reset/VBoxContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "RESET_ALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -40.0
+offset_right = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MainMenu" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme = ExtResource("1_a63yd")
+text = "MENU"
+
+[connection signal="pressed" from="GridContainer/Heroes" to="." method="_on_heroes_pressed"]
+[connection signal="pressed" from="GridContainer/Series" to="." method="_on_series_pressed"]
+[connection signal="pressed" from="GridContainer/Frutas" to="." method="_on_frutas_pressed"]
+[connection signal="pressed" from="GridContainer/Todos" to="." method="_on_todos_pressed"]
+[connection signal="pressed" from="GridContainer/Pais" to="." method="_on_frutas_pressed"]
+[connection signal="pressed" from="GridContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

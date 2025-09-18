@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://btgoy5bqnkcge"]
+
+[ext_resource type="Theme" uid="uid://hsjqnri41wi4" path="res://Themes/slot.tres" id="1_12ej0"]
+[ext_resource type="Script" uid="uid://c16nuug7kdsqe" path="res://Scripts/slot.gd" id="1_luhj6"]
+[ext_resource type="Theme" uid="uid://bp2756durdtp" path="res://Themes/item.tres" id="3_67ou1"]
+
+[node name="Slot" type="PanelContainer" groups=["Slot"]]
+custom_minimum_size = Vector2(36, 36)
+theme = ExtResource("1_12ej0")
+script = ExtResource("1_luhj6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("3_67ou1")
+horizontal_alignment = 1

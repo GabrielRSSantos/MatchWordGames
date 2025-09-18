@@ -1,0 +1,278 @@
+[gd_scene load_steps=15 format=3 uid="uid://clgwt36unr31m"]
+
+[ext_resource type="Script" uid="uid://pbfrw7ot3ucp" path="res://Scripts/configuration.gd" id="1_wd4b4"]
+[ext_resource type="Theme" uid="uid://b6sn34dbeyrt3" path="res://Themes/buttons.tres" id="2_e0t16"]
+[ext_resource type="Theme" uid="uid://bp2756durdtp" path="res://Themes/item.tres" id="2_fd6jd"]
+[ext_resource type="AudioStream" uid="uid://b8j0r6j35kjv3" path="res://Sounds/Selected.wav" id="4_el0eo"]
+
+[sub_resource type="Gradient" id="Gradient_el0eo"]
+offsets = PackedFloat32Array(0.588235, 1)
+colors = PackedColorArray(0, 0.431373, 0.866667, 1, 0.447814, 0.683738, 0.999995, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fd6jd"]
+gradient = SubResource("Gradient_el0eo")
+width = 124
+height = 124
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0t16"]
+bg_color = Color(0.952941, 0.647059, 1, 1)
+border_width_bottom = 3
+border_color = Color(0.917647, 0.403922, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el0eo"]
+bg_color = Color(0.952941, 0.647059, 1, 1)
+border_width_top = 3
+border_color = Color(0.917647, 0.403922, 1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe4bj"]
+bg_color = Color(0.282353, 0.721569, 1, 1)
+border_width_bottom = 3
+border_color = Color(0, 0.526163, 0.780201, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1qa1"]
+bg_color = Color(0.282353, 0.721569, 1, 1)
+border_width_top = 3
+border_color = Color(0, 0.52549, 0.780392, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqhdk"]
+bg_color = Color(0, 0.631373, 0, 1)
+border_width_bottom = 3
+border_color = Color(1.2875e-06, 0.453848, 1.92523e-07, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52ijd"]
+bg_color = Color(0, 0.631373, 0, 1)
+border_width_top = 3
+border_color = Color(0, 0.454902, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm7g3"]
+bg_color = Color(1, 0.172549, 0, 1)
+border_width_bottom = 3
+border_color = Color(0.626406, 0.0919704, 9.62615e-08, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5xvs"]
+bg_color = Color(1, 0.172549, 0, 1)
+border_width_top = 3
+border_color = Color(0.627451, 0.0901961, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Configurations" type="CanvasLayer"]
+layer = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_e0t16")
+script = ExtResource("1_wd4b4")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_fd6jd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.247
+anchor_right = 0.755
+anchor_bottom = 1.0
+offset_left = -0.0800018
+offset_right = -0.200043
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_e0t16")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "BUTTON_COLOR"
+
+[node name="Pink" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_e0t16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_el0eo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e0t16")
+
+[node name="Blue" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_xe4bj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m1qa1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xe4bj")
+
+[node name="Green" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_nqhdk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_52ijd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nqhdk")
+
+[node name="Red" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_qm7g3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5xvs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qm7g3")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_e0t16")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "LETTER_COLOR"
+
+[node name="LetterPink" type="Button" parent="Control/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_e0t16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_el0eo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e0t16")
+text = "A"
+
+[node name="LetterBlue" type="Button" parent="Control/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_xe4bj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m1qa1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xe4bj")
+text = "B"
+
+[node name="LetterGreen" type="Button" parent="Control/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_nqhdk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_52ijd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nqhdk")
+text = "C"
+
+[node name="LetterRed" type="Button" parent="Control/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_qm7g3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p5xvs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qm7g3")
+text = "D"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_e0t16")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "LANGUAGE"
+
+[node name="OptionButton" type="OptionButton" parent="Control/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+alignment = 1
+clip_text = true
+selected = 0
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Portugues"
+popup/item_1/id = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "SOUND"
+
+[node name="SoundButton" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+toggle_mode = true
+text = "On"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Volume"
+
+[node name="Volume" type="HSlider" parent="Control/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+min_value = -10.0
+max_value = 10.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_fd6jd")
+alignment = 1
+
+[node name="Back" type="Button" parent="Control/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_el0eo")
+
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Pink" to="Control" method="_on_pink_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Blue" to="Control" method="_on_blue_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Green" to="Control" method="_on_green_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Red" to="Control" method="_on_red_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer5/LetterPink" to="Control" method="_on_letter_pink_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer5/LetterBlue" to="Control" method="_on_letter_blue_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer5/LetterGreen" to="Control" method="_on_letter_green_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer5/LetterRed" to="Control" method="_on_letter_red_pressed"]
+[connection signal="item_selected" from="Control/VBoxContainer/HBoxContainer6/OptionButton" to="Control" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Control/VBoxContainer/HBoxContainer2/SoundButton" to="Control" method="_on_sound_button_toggled"]
+[connection signal="value_changed" from="Control/VBoxContainer/HBoxContainer4/Volume" to="Control" method="_on_volume_value_changed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer3/Back" to="Control" method="_on_back_pressed"]

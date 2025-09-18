@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccmaf3foy0quf"]
+
+[ext_resource type="Script" uid="uid://d1thlwqpbm15p" path="res://Scripts/sound.gd" id="1_l04ps"]
+[ext_resource type="AudioStream" uid="uid://b8j0r6j35kjv3" path="res://Sounds/Selected.wav" id="1_y8l05"]
+
+[node name="Audio" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_y8l05")
+script = ExtResource("1_l04ps")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

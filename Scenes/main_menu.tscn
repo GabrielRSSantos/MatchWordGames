@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://mfvpswvrq8l1"]
+
+[ext_resource type="Theme" uid="uid://b6sn34dbeyrt3" path="res://Themes/buttons.tres" id="1_28flt"]
+[ext_resource type="Shader" uid="uid://bta784k2fv265" path="res://Shaders/background.gdshader" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://eovtjhae2t1f" path="res://Scripts/main_menu.gd" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://bn6l81nfrxcdo" path="res://Sprites/Background_gimp.png" id="4_ce3w2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ehe0"]
+shader = ExtResource("2_48xlc")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/angle_degrees = 45.0
+shader_parameter/repeat_x = 1.0
+shader_parameter/repeat_y = 1.0
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_48xlc"]
+font_size = 29
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_28flt")
+script = ExtResource("2_ce3w2")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1ehe0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ce3w2")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058
+anchor_top = 0.397
+anchor_right = 0.37
+anchor_bottom = 0.925
+offset_left = -0.120003
+offset_top = 0.0800018
+offset_right = 0.199997
+offset_bottom = -3.05176e-05
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartGame" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "START_GAME"
+
+[node name="Configuration" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "CONFIGURATION"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "CREDITS"
+
+[node name="Leave" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "LEAVE"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.205
+anchor_top = 0.128
+anchor_right = 0.795
+anchor_bottom = 0.211
+offset_left = 0.299988
+offset_top = -0.0800018
+offset_right = -0.300018
+offset_bottom = 0.0399933
+grow_horizontal = 2
+text = "GUESS THE WORD"
+label_settings = SubResource("LabelSettings_48xlc")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Configuration" to="." method="_on_configuration_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Leave" to="." method="_on_leave_pressed"]

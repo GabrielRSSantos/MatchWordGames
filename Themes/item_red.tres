@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bl43ar76mnd4u"]
+
+[ext_resource type="FontFile" uid="uid://dka3lorbho0tl" path="res://Fonts/04B_30__.TTF" id="1_g1gom"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76mu4"]
+bg_color = Color(1, 0.151344, 0.108333, 1)
+border_width_bottom = 3
+border_color = Color(0.592448, 2.20198e-06, 4.33177e-07, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn1ok"]
+bg_color = Color(1, 0.151344, 0.108333, 1)
+border_width_top = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxFlat_76mu4")
+Button/styles/normal = SubResource("StyleBoxFlat_76mu4")
+Button/styles/pressed = SubResource("StyleBoxFlat_sn1ok")
+Label/fonts/font = ExtResource("1_g1gom")
+Panel/styles/panel = SubResource("StyleBoxFlat_76mu4")

@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bp2756durdtp"]
+
+[ext_resource type="FontFile" uid="uid://dka3lorbho0tl" path="res://Fonts/04B_30__.TTF" id="1_8vrxr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8h6p"]
+bg_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gaksa"]
+bg_color = Color(1.54018e-06, 0.695566, 0.618909, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt6ca"]
+bg_color = Color(0.905257, 0.33021, 0.817068, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76mu4"]
+bg_color = Color(0.952941, 0.647059, 1, 1)
+border_width_bottom = 3
+border_color = Color(0.908243, 0.313, 0.999998, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[resource]
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_i8h6p")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gaksa")
+HSlider/styles/slider = SubResource("StyleBoxFlat_vt6ca")
+Label/fonts/font = ExtResource("1_8vrxr")
+Panel/styles/panel = SubResource("StyleBoxFlat_76mu4")

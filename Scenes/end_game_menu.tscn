@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://i3u56rs30egr"]
+
+[ext_resource type="FontFile" uid="uid://dka3lorbho0tl" path="res://Fonts/04B_30__.TTF" id="1_d73gb"]
+[ext_resource type="Script" uid="uid://n85g5k0y62dn" path="res://Scripts/end_game_menu.gd" id="1_fk6ej"]
+[ext_resource type="Theme" uid="uid://b6sn34dbeyrt3" path="res://Themes/buttons.tres" id="3_hijmk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d73gb"]
+font = ExtResource("1_d73gb")
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="EndGameMenu" type="Control"]
+layout_mode = 3
+anchor_left = 0.254687
+anchor_right = 0.807813
+anchor_bottom = 1.0
+offset_right = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fk6ej")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Parabens" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "* * * CONGRATULATIONS * * *"
+label_settings = SubResource("LabelSettings_d73gb")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_hijmk")
+theme_override_constants/separation = 55
+alignment = 1
+
+[node name="Menu" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+text = "MENU"
+
+[node name="Next" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+text = "NEXT"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]

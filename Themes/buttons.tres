@@ -1,0 +1,52 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b6sn34dbeyrt3"]
+
+[ext_resource type="FontFile" uid="uid://dka3lorbho0tl" path="res://Fonts/04B_30__.TTF" id="1_aurpk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d73gb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk6ej"]
+bg_color = Color(0.282353, 0.721569, 1, 1)
+border_width_bottom = 3
+border_color = Color(1.2514e-06, 0.371769, 0.558319, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hijmk"]
+bg_color = Color(0.282353, 0.721569, 1, 1)
+border_width_top = 3
+border_color = Color(0.898039, 0.207843, 1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qw1n"]
+bg_color = Color(0.282353, 0.721569, 1, 1)
+border_width_bottom = 3
+border_color = Color(1.2514e-06, 0.371769, 0.558319, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bel46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ol5y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ar3ld"]
+
+[resource]
+Button/constants/outline_size = 4
+Button/fonts/font = ExtResource("1_aurpk")
+Button/styles/focus = SubResource("StyleBoxEmpty_d73gb")
+Button/styles/hover = SubResource("StyleBoxFlat_fk6ej")
+Button/styles/normal = SubResource("StyleBoxFlat_fk6ej")
+Button/styles/pressed = SubResource("StyleBoxFlat_hijmk")
+Label/fonts/font = ExtResource("1_aurpk")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_2qw1n")
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_bel46")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_4ol5y")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_2qw1n")
+PopupMenu/styles/separator = SubResource("StyleBoxEmpty_ar3ld")

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://5gt1g7b3un2y"]
+
+[ext_resource type="Theme" uid="uid://bp2756durdtp" path="res://Themes/item.tres" id="1_r18jl"]
+[ext_resource type="Script" uid="uid://dnvayp8ytu03t" path="res://Scripts/credits.gd" id="2_ccovl"]
+[ext_resource type="Theme" uid="uid://b6sn34dbeyrt3" path="res://Themes/buttons.tres" id="2_gryuy"]
+
+[sub_resource type="Gradient" id="Gradient_ccovl"]
+offsets = PackedFloat32Array(0.588235, 1)
+colors = PackedColorArray(0, 0.431373, 0.866667, 1, 0.447814, 0.683738, 0.999995, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gryuy"]
+gradient = SubResource("Gradient_ccovl")
+width = 124
+height = 124
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="FontFile" id="FontFile_ccovl"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r18jl")
+script = ExtResource("2_ccovl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_gryuy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_right = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "THANKS"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "THANKS_2"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Developer: Gabriel Santos"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_ccovl")
+text = "Gabrielsantos.new@gmail.com"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "https://gabrielrssantos.itch.io/"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gryuy")
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
